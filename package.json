@@ -1,0 +1,44 @@
+{
+  "name": "smart-audio-player",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "upload-beat": "node --env-file-if-exists=.env.local --import tsx scripts/upload-beat.ts",
+    "typegen": "sanity schema extract --path=sanity.schema.json --enforce-required-fields --force && sanity typegen generate",
+    "check:secrets": "node scripts/check-bundle-secrets.mjs",
+    "dev:secrets": "infisical run --env=dev -- npm run dev",
+    "build:secrets": "infisical run --env=prod -- npm run build && infisical run --env=prod -- npm run check:secrets"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@sanity/vision": "^6.21.0",
+    "next": "^16.4.3",
+    "next-sanity": "^13.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sanity": "^6.21.0",
+    "server-only": "^0.0.1",
+    "styled-components": "^6.6.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1158.0",
+    "@sanity/client": "^8.13.0",
+    "@sanity/webhook": "^4.0.4",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "music-metadata": "^12.3.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
