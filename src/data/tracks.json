@@ -1,0 +1,17 @@
+{
+  "artist": "W.I.L.L.I.A.M.S",
+  "tracks": [
+    { "id": "night-drive", "title": "Night Drive", "genre": "Trap", "bpm": 140, "key": "F# min", "hue": 262, "src": "/audio/placeholder-night-drive.wav" },
+    { "id": "slow-burn", "title": "Slow Burn", "genre": "R&B", "bpm": 92, "key": "D min", "hue": 14, "src": "/audio/placeholder-slow-burn.wav" },
+    { "id": "concrete", "title": "Concrete", "genre": "Boom bap", "bpm": 88, "key": "A min", "hue": 36, "src": "/audio/placeholder-concrete.wav" },
+    { "id": "afterglow", "title": "Afterglow", "genre": "Lo-fi", "bpm": 78, "key": "C maj", "hue": 190, "src": "/audio/placeholder-afterglow.wav" },
+    { "id": "pressure", "title": "Pressure", "genre": "Drill", "bpm": 144, "key": "G min", "hue": 350, "src": "/audio/placeholder-pressure.wav" },
+    { "id": "glass-house", "title": "Glass House", "genre": "R&B", "bpm": 100, "key": "Eb maj", "hue": 300, "src": "/audio/placeholder-glass-house.wav" },
+    { "id": "static", "title": "Static", "genre": "Trap", "bpm": 150, "key": "B min", "hue": 80, "src": "/audio/placeholder-static.wav" },
+    { "id": "low-tide", "title": "Low Tide", "genre": "Lo-fi", "bpm": 82, "key": "F maj", "hue": 160, "src": "/audio/placeholder-low-tide.wav" }
+  ],
+  "playlists": [
+    { "id": "late-night", "name": "Late night", "trackIds": ["slow-burn", "glass-house", "low-tide", "night-drive"] },
+    { "id": "workout", "name": "Workout", "trackIds": ["pressure", "static", "night-drive", "concrete"] }
+  ]
+}

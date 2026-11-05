@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "placeholders": "node scripts/make-placeholder-audio.mjs",
+    "predev": "node scripts/make-placeholder-audio.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/make-placeholder-audio.mjs",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
