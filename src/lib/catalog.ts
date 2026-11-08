@@ -52,6 +52,7 @@ export function parseCatalog(raw: unknown): Catalog {
     else ids.add(t.id);
     if (!isStr(t.title)) problems.push(`${at}.title: required text`);
     if (!isStr(t.src)) problems.push(`${at}.src: required path or URL`);
+    if (t.cover !== undefined && !isStr(t.cover)) problems.push(`${at}.cover: must be a path or URL`);
     for (const k of ["bpm", "duration", "hue"] as const) {
       if (!optNum(t[k])) problems.push(`${at}.${k}: must be a number`);
     }
@@ -95,6 +96,7 @@ export function catalogToState(c: Catalog): {
       bpm: t.bpm,
       musicalKey: t.key,
       hue: t.hue,
+      cover: t.cover,
       addedAt: 0,
     };
   }
