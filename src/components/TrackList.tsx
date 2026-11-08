@@ -26,7 +26,7 @@ export function TrackList() {
 
   return (
     <section aria-labelledby="library-h" className="flex min-h-0 flex-1 flex-col">
-      <div className="mb-4 flex items-baseline justify-between gap-3">
+      <div className="mb-4 flex items-baseline justify-between gap-3 max-lg:sr-only">
         <h2 id="library-h" className="text-2xl font-extrabold tracking-tight font-stretch-118%">Library</h2>
         <span className="font-mono text-xs tracking-[0.14em] text-muted">
           {ids.length} {ids.length === 1 ? "BEAT" : "BEATS"}
@@ -52,7 +52,7 @@ export function TrackList() {
         })}
       </div>
 
-      <ol className="-mx-2 mt-2 min-h-0 flex-1 overflow-y-auto px-2 [scrollbar-color:rgba(255,255,255,0.15)_transparent] scrollbar-thin">
+      <ol className="-mx-2 mt-2 min-h-0 flex-1 overflow-y-auto overscroll-contain px-2 [scrollbar-color:rgba(255,255,255,0.15)_transparent] scrollbar-thin">
         {ids.map((id, i) => {
           const t = state.tracks[id];
           if (!t) return null;

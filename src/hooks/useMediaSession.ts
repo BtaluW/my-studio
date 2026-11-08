@@ -38,8 +38,6 @@ export function useMediaSession(
     set("pause", () => h.current.pause());
     set("nexttrack", () => h.current.next());
     set("previoustrack", () => h.current.prev());
-    set("seekforward", (d) => h.current.seekBy(d.seekOffset ?? 10));
-    set("seekbackward", (d) => h.current.seekBy(-(d.seekOffset ?? 10)));
     set("seekto", (d) => d.seekTime !== undefined && h.current.seek(d.seekTime));
     return () => {
       for (const a of [
@@ -47,8 +45,6 @@ export function useMediaSession(
         "pause",
         "nexttrack",
         "previoustrack",
-        "seekforward",
-        "seekbackward",
         "seekto",
       ] as MediaSessionAction[]) {
         set(a, null);
@@ -59,9 +55,17 @@ export function useMediaSession(
   useEffect(() => {
     if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
     navigator.mediaSession.metadata = track
-      ? new MediaMetadata({ title: track.title, artist: track.artist, album: track.genre ?? "" })
+      ? new MediaMetadata({
+        title: track.title,
+        artist: track.artist,
+        album: track.genre,
+        artwork: track.cover ? [{
+          src: track.cover,
+          sizes: "1200x1200"
+        }] : [],
+      })
       : null;
-  }, [track?.id, track?.title, track?.artist]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [track?.id, track?.title, track?.artist, track?.cover]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
