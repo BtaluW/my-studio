@@ -16,7 +16,7 @@ export function NowPlaying() {
     <section
       aria-label="Now playing"
       // The grey backdrop shows when there's no cover; the track's colour lives on the record label.
-      className="relative isolate flex flex-1 items-center justify-center overflow-hidden rounded-[22px] bg-[radial-gradient(110%_85%_at_50%_40%,#c4c6c8_0%,#a9abae_45%,#7d7f83_100%)] px-6 py-6 lg:min-h-0"
+      className="relative isolate flex flex-1 items-center justify-center overflow-hidden rounded-[22px] bg-[radial-gradient(110%_85%_at_50%_40%,#c4c6c8_0%,#a9abae_45%,#7d7f83_100%)] px-6 py-6 lg:min-h-0 max-lg:rounded-none max-lg:pt-12"
     >
       {cover && (
         // key: a new element per cover, so each one fades in instead of swapping abruptly.

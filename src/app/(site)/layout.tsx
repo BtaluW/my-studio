@@ -6,6 +6,7 @@ import "./globals.css";
 export const viewport: Viewport = {
   themeColor: "#010101",
   colorScheme: "dark",
+  viewportFit: "cover",
 };
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {

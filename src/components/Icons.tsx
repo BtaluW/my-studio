@@ -172,3 +172,12 @@ export function YouTubeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
     </svg>
   )
 }
+
+export function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      {/* Flap on top, body below, with a gap between them for the fold. */}
+      <path d="M4 5h16a2 2 0 0 1 2 2v.4l-10 6.25L2 7.4V7a2 2 0 0 1 2-2Zm-2 4.75 9.47 5.92a1 1 0 0 0 1.06 0L22 9.75V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.75Z" />
+    </svg>
+  )
+}
