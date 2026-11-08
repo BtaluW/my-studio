@@ -16,6 +16,8 @@ export interface Track {
   musicalKey?: string;
   /** 0–360: colour of the record label and cover tile. */
   hue?: number;
+  /** Cover art URL. Optional. */
+  cover?: string;
   addedAt: number;
 }
 
@@ -47,7 +49,10 @@ export type SleepTimer =
   | { mode: "at"; endsAt: number; minutes: number }
   | { mode: "endOfTrack" };
 
-export type View = { kind: "library" } | { kind: "playlist"; id: string };
+export type View =
+  | { kind: "library" }
+  | { kind: "playlist"; id: string }
+  | { kind: "genre"; genre: string };
 
 export interface AudioEventEntry {
   id: number;
